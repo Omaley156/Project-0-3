@@ -1,0 +1,44 @@
+
+AllowedVehiclesList = ['Ford F-150', 'Cheverlet Silverado', 'Tesla Cybertruck', 'Toyota Tundra', 'Nissan Titan']
+
+def menu():
+    print("*******************************")
+    print("AutoCountry Vehicle Finder v0.3")
+    print("*******************************")
+    print("Please Enter the following number below from the following menu:")
+    print("1. PRINT all Authorized Vehicles")
+    print("2. SEARCH all Authorized Vehicle")
+    print("3. ADD Authorized Vehicle")
+    print("4. Exit")
+    print("******************************")
+menu()
+while True:
+    choice = input("Enter Here: ")
+    if choice == '1':
+        print("The AutoCountry sales manager has authorized the following vehicles:")
+        for vehicle in AllowedVehiclesList:
+            print(vehicle)
+        menu()
+    elif choice =='2':
+        vehicleSearch = input("Please Enter the full Vehicle name: ")
+        if vehicleSearch in AllowedVehiclesList:
+            print(f"{vehicleSearch} is an authorized vehicle.")
+        else:
+            print(f"{vehicleSearch} is not an authorized vehicle, if you recieved this in error please check the spelling and try again")
+    elif choice == '3':
+        Addvehicle = input("Please Enter the full Vehicle name you would like to add: ")
+        if Addvehicle not in AllowedVehiclesList:
+            AllowedVehiclesList.append(Addvehicle)
+            print(f"You have added {Addvehicle} as an authorized vehicle")
+        menu()
+    elif choice == '4':
+        print("Thank you for using the AutoCountry Vehicle Finder, good-bye")
+
+
+
+
+
+
+
+
+
